@@ -1,0 +1,38 @@
+<div class="container-fluid" style="height: 100vh;">
+    <div class="d-flex flex-column w-100 p-4 h-100 rounded bg-primary ">
+        <div class="m-auto fs-3 text-light mb-5">POST</div>
+        <div class="container h-100">
+            <ng-container *ngIf="user">
+                <div class="row h-75">
+                    <ng-container *ngFor="let data of post; let i = index">
+                        <div class="col-xl-4 col-md-6 col-sm-12 col-lg-6 p-2 position-relative">
+                            <div class="card gx-4 p-4 h-100">
+                                <div class="card-block">
+                                    <h4 class="card-title">{{data.name | titlecase}}</h4>
+                                    <div class="row">
+                                        <p class="col">
+                                            <ng-container *ngIf="!data.showMore">
+                                                {{data.body.substring(0,80) }}
+                                            </ng-container>
+                                            <ng-container *ngIf="data.showMore">
+                                                {{data.body}}
+                                            </ng-container>
+                                            <span style="margin: 0 3px;">...</span>
+                                            <a *ngIf="data.showMore" class="col" style="margin: 0 2px; cursor: pointer;" (click)="less(i)">less</a>
+                                            <a *ngIf="!data.showMore" class="col" style="margin: 0 2px; cursor: pointer;" (click)="more(i)">more</a>
+                                        </p>
+                                        <p>Author: <span class="fw-bolder">{{user.name}}</span></p>
+                                    </div>
+                                    <button class="col-4 position-absolute bottom-0 end-0" style="border: 2px; border-radius: 5px;" (click)="showComments(data)">Comments</button>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="!user">
+                <div class="row h-100 d-flex justify-content-center align-items-center fw-bold text-light border text-center fs-4">No selected user found!</div>
+            </ng-container>
+        </div>
+    </div>
+</div>

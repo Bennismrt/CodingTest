@@ -1,0 +1,80 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex flex-column h-100">
+    <h1>TEST CODING PSN</h1>
+    <div class="d-flex flex-column w-100 border p-4 h-100 rounded">
+        <div class="m-auto fs-3 text-black mb-5">USERS</div>
+        <div class="container">
+            <div class="row">
+                <ng-container *ngFor="let result of user">
+                    <div class="col-xl-6 col-md-12 col-sm-12 col-lg-6">
+                        <div class="container" style="margin-top: 30px;">
+                            <div class="row" style="height: 400px;">
+                                <div class="col-4 border">
+                                <div class="row d-flex align-items-center h-100">
+                                    <div class="col h-100 border">
+                                    <div class="row h-75 d-flex justify-content-center align-items-center">
+                                        <img class="img-fluid" src="https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-PNG-Image-File.png" alt=""/>
+                                    </div>
+                                    <div class="row fw-bolder h-25 border-top d-flex justify-content-center align-items-center">
+                                        {{result.username}}
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="col-8 border">
+                                <div class="row" style="height: 25%;">
+                                    <div class="col h-100">
+                                        <div class="h-50 row fw-bold fs-3 d-flex justify-content-center align-items-end">
+                                            {{result.name}}
+                                        </div>
+                                        <div class="h-50 row d-flex justify-content-center align-items-start fst-italic">
+                                            {{result.email}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="height: 60%;">
+                                    <div class="col h-100 border-top border-bottom">
+                                        <div class="row" style="height: 20%; padding-top: 8px;">
+                                            <div class="col-2">phone</div>
+                                            <div class="col-1">:</div>
+                                            <div class="col-9">{{result.phone}}</div>
+                                        </div>
+                                        <div class="row" style="height: 20%;">
+                                            <div class="col-2">Email</div>
+                                            <div class="col-1">:</div>
+                                            <div class="col-9">{{result.email}}</div>
+                                        </div>
+                                        <div class="row" style="height: 20%;">
+                                            <div class="col-2">Address</div>
+                                            <div class="col-1">:</div>
+                                            <div class="col-9">{{result.address.street}}, {{result.address.city}}, {{result.address.zipcode}}</div>
+                                        </div>
+                                        <div class="row" style="height: 20%;">
+                                            <div class="col-2">Company</div>
+                                            <div class="col-1">:</div>
+                                            <div class="col-9">
+                                                {{result.company.name}}, {{result.company.bs}}
+                                            </div>
+                                        </div>
+                                        <div class="row" style="height: 20%; padding-top: 4px;">
+                                            <div class="col-2">Website</div>
+                                            <div class="col-1">:</div>
+                                            <div class="col-9">
+                                                hildegard.org
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-end align-items-center" style="height: 15%;">
+                                    <div class="col h-50 d-flex justify-content-end align-items-center">
+                                        <button type="button" class="btn btn-primary" (click)="showPost(result)">Posts</button>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            </div>
+    </div>
+</nav>
