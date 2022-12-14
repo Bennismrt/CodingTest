@@ -38,9 +38,7 @@ export class CommentsComponent implements OnInit {
 
   fatchComments(){
     this._fatchApiServices.getComments(this.post.id).subscribe((res) => {
-      if(Array.isArray(res)){
-        this.comments = res;
-      }
+      this.comments = res;
       console.log('comments', this.comments);
     });
   }
