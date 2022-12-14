@@ -69,5 +69,9 @@ export class PostComponent implements OnInit {
     this._router.navigateByUrl('/comments');
   }
 
+  back(){
+    this._router.navigateByUrl('/');
+  }
+
 }
 
